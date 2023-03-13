@@ -1,6 +1,7 @@
 package network
 
 import data.response.JResAutoComplete
+import data.response.JResDailyTrends
 import network.di.DaggerEndpointComponents
 
 class Remote {
@@ -15,10 +16,20 @@ class Remote {
         )
     }
 
+    fun requestDailyTrends(result: NetworkResult<JResDailyTrends>) {
+        val networkRequest = DaggerEndpointComponents.create().getNetworkRequest()
+        networkRequest.request(
+            dailyTrendsURL(),
+            result,
+            JResDailyTrends.serializer(),
+            ")]}',"
+        )
+    }
+
     private fun autoCompleteURL(searchKeyword: String) =
         "${NetworkConstants.AUTO_COMPLETE_URL}/$searchKeyword"
 
-    fun dailyTrends(location: String = "US") =
+    private fun dailyTrendsURL(location: String = "US") =
         "${NetworkConstants.DAILY_TRENDS}?hl=en-US&tz=-210&geo=${location}&hl=en-US&ns=15"
 
     fun realtimeTrends(location: String = "US", category: String = "all") =
