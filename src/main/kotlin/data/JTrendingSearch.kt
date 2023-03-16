@@ -18,13 +18,4 @@ data class JTrendingSearch(
         val exploreLink: String,
     )
 
-    @Serializable
-    data class JArticle(
-        val title: String,
-        val timeAgo: String,
-        val image: JImage? = null,
-        val url: String,
-        val snippet: String,
-    )
-
 }
