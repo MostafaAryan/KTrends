@@ -16,6 +16,10 @@ class NetworkRequest @Inject constructor(private val client: OkHttpClient) {
         initialCharsToRemoveFromResponse: String? = null
     ) {
         val request = Request.Builder().url(url).build()
+        val json = Json {
+            ignoreUnknownKeys = true
+        }
+
         val responseCallback = object : Callback {
             override fun onFailure(call: Call, e: java.io.IOException) {
                 println("failure!")
@@ -25,12 +29,12 @@ class NetworkRequest @Inject constructor(private val client: OkHttpClient) {
             override fun onResponse(call: Call, response: Response) {
                 print("success.")
                 var bodyString = response.body?.string()
-                initialCharsToRemoveFromResponse?.let {charsToBeRemoved ->
+                initialCharsToRemoveFromResponse?.let { charsToBeRemoved ->
                     bodyString = bodyString?.replace(charsToBeRemoved, "")
                 }
                 print(bodyString)
 
-                val resultObject = Json.decodeFromString(deserializationStrategy, bodyString ?: "")
+                val resultObject = json.decodeFromString(deserializationStrategy, bodyString ?: "")
                 networkResult.onSuccess(resultObject)
             }
         }
