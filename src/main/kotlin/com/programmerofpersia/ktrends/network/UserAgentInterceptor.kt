@@ -1,4 +1,4 @@
-package network
+package com.programmerofpersia.ktrends.network
 
 import okhttp3.Interceptor
 import okhttp3.Request

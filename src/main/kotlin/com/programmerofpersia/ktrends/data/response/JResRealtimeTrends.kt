@@ -1,6 +1,6 @@
-package data.response
+package com.programmerofpersia.ktrends.data.response
 
-import data.JStory
+import com.programmerofpersia.ktrends.data.JStory
 import kotlinx.serialization.Serializable
 
 @Serializable

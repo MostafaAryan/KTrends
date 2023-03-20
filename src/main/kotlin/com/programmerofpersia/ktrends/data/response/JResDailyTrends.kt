@@ -1,6 +1,6 @@
-package data.response
+package com.programmerofpersia.ktrends.data.response
 
-import data.JTrendingSearchDay
+import com.programmerofpersia.ktrends.data.JTrendingSearchDay
 import kotlinx.serialization.Serializable
 
 @Serializable

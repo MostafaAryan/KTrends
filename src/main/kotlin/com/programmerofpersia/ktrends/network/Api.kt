@@ -1,14 +1,14 @@
-package network
+package com.programmerofpersia.ktrends.network
 
-import data.response.JResAutoComplete
-import data.response.JResDailyTrends
-import data.response.JResRealtimeTrends
-import network.di.DaggerEndpointComponents
+import com.programmerofpersia.ktrends.data.response.JResAutoComplete
+import com.programmerofpersia.ktrends.data.response.JResDailyTrends
+import com.programmerofpersia.ktrends.data.response.JResRealtimeTrends
+import javax.inject.Inject
 
-class Remote {
+class Api @Inject constructor(private val networkRequest: NetworkRequest) {
 
     fun requestAutoComplete(searchKeyword: String, result: NetworkResult<JResAutoComplete>) {
-        val networkRequest = DaggerEndpointComponents.create().getNetworkRequest()
+        // val networkRequest = DaggerEndpointComponents.create().getNetworkRequest()
         networkRequest.request(
             autoCompleteURL(searchKeyword),
             result,
@@ -18,7 +18,7 @@ class Remote {
     }
 
     fun requestDailyTrends(result: NetworkResult<JResDailyTrends>) {
-        val networkRequest = DaggerEndpointComponents.create().getNetworkRequest()
+        // val networkRequest = DaggerEndpointComponents.create().getNetworkRequest()
         networkRequest.request(
             dailyTrendsURL(),
             result,
@@ -28,7 +28,7 @@ class Remote {
     }
 
     fun requestRealtimeTrends(result: NetworkResult<JResRealtimeTrends>) {
-        val networkRequest = DaggerEndpointComponents.create().getNetworkRequest()
+        // val networkRequest = DaggerEndpointComponents.create().getNetworkRequest()
         networkRequest.request(
             realtimeTrendsURL(),
             result,

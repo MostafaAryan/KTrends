@@ -1,4 +1,4 @@
-package network
+package com.programmerofpersia.ktrends.network
 
 interface NetworkResult<T> {
 

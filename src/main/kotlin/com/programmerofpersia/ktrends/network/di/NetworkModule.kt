@@ -1,9 +1,9 @@
-package network.di
+package com.programmerofpersia.ktrends.network.di
 
 import dagger.Module
 import dagger.Provides
-import network.NetworkConstants
-import network.UserAgentInterceptor
+import com.programmerofpersia.ktrends.network.NetworkConstants
+import com.programmerofpersia.ktrends.network.UserAgentInterceptor
 import okhttp3.OkHttpClient
 import javax.inject.Singleton
 

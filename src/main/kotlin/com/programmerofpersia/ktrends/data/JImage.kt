@@ -1,4 +1,4 @@
-package data
+package com.programmerofpersia.ktrends.data
 
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.Serializable

@@ -1,4 +1,4 @@
-package network
+package com.programmerofpersia.ktrends.network
 
 import kotlinx.serialization.DeserializationStrategy
 import kotlinx.serialization.json.Json

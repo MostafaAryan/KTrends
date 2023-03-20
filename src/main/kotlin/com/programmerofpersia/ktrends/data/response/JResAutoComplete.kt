@@ -1,6 +1,6 @@
-package data.response
+package com.programmerofpersia.ktrends.data.response
 
-import data.JTopic
+import com.programmerofpersia.ktrends.data.JTopic
 import kotlinx.serialization.Serializable
 
 @Serializable
