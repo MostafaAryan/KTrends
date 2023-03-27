@@ -7,7 +7,7 @@ import kotlin.concurrent.thread
 
 fun main(args: Array<String>) {
 
-    //
+    ////
 
     val api = DaggerNetworkComponents.create().getApi()
     api.requestRealtimeTrends(object : NetworkResult<JResRealtimeTrends> {
